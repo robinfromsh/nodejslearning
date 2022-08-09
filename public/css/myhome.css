@@ -1,0 +1,126 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* 导航栏 */
+nav#homenav {
+    margin-bottom: 0;
+}
+
+a.navbar-brand {
+    height: 80px;
+    line-height: 50px;
+}
+
+.navbar-default .navbar-brand {
+    color: #777;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+.navbar-default .navbar-nav>li>a {
+    height: 80px;
+    line-height: 50px;
+    color:slateblue;
+}
+
+/* 中间图片 */
+
+#homeimg {
+    /* margin-top: 80px; */
+    background-image: url(../img/home/home.jpg);
+    background-size: cover;
+    text-align: center;
+}
+
+#homet{
+    padding: 8%;
+}
+
+H1 {
+    color: white;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 35px;
+}
+
+P {
+    color: WHITE;
+    TEXT-ALIGN: JUSTIFY;
+    /* margin: 0 0 10px; */
+    margin-top: 15%;
+}
+
+
+/* team */
+section#team {
+    padding: 20px 0px;
+}
+
+section#Gryffindor {
+    background: lightsalmon;
+    padding: 40px 0;
+}
+
+section#Slytherin {
+    background: lightgrey;
+    padding: 40px 0;
+}
+section#Hufflepuff {
+    background: palegoldenrod;
+    padding: 40px 0;
+}
+section#Ravenclaw {
+    background: lightblue;
+    padding: 40px 0;
+}
+
+.col-md-6.hometeampic {
+    text-align: center;
+}
+
+p#cmt {
+    color: black;
+    margin-top: 20px;
+}
+
+img {
+    width: 140px;
+}
+
+h2 {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* 页脚 */
+
+span#foot {
+    letter-spacing: 2px;
+}
+
+footer {
+    margin-top: 10%;
+    margin-bottom: 1%;
+    text-align: center;
+
+}
+
+/* 文章详情 */
+
+h3#contenth3 {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+p#contentp {
+    color: black;
+    TEXT-ALIGN: JUSTIFY;
+    margin: 0;
+}
+
+section#newscontent {
+    height: 500px;
+}

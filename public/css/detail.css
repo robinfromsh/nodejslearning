@@ -1,0 +1,80 @@
+
+
+.detail {
+    height: 400px;
+    width: 80%;
+    margin-left: 4%;
+    /* overflow: auto; */
+}
+
+.img {
+    height: 200px;
+    width: 200px;
+    border: 1px solid gray;
+    box-shadow: 1px 1px 2px gray;
+    background-image: url(/img/Hermione.jpg);
+    background-size: cover;
+    margin-top: 3px;
+}
+.content {
+    line-height: 40px;
+    /* margin: 30px 20px; */
+    padding: 30px 0px;
+}
+
+.loginmain {
+    border: 2px solid gold;
+    box-shadow: 2px 2px 3px gray;
+    height: 400px;
+    padding-left: 200px;
+    width: 30%;
+    margin-left: 30%;
+}
+
+.form{
+    margin-top: 20px;
+    
+}
+
+.postdetail {
+    margin: 3px 10%;
+    border: 4px solid bisque;
+    box-shadow: 1px 1px 10px grey;
+}
+
+input[type="text"] {
+    /* width: 500px; */
+    height: 30px;
+}
+
+textarea {
+    width:500px;
+    height:300px;
+}
+
+img.actorimg{
+    height: 70px;
+    margin-top: 4px;
+}
+
+input[type="file"] {
+    margin-left: 15px;
+}
+
+form.post {
+    margin: 10px 20%;
+}
+
+.detailmain {
+    margin-top: 30px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+}
+
+p.detail {
+    font-size: 20px;
+}

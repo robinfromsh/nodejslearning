@@ -1,0 +1,17 @@
+extends ./mainlayout.pug
+
+block styles
+    link(rel="stylesheet" href="/css/myhome.css") 
+
+block main        
+    section#newscontent
+        .container-fluid 
+            .row 
+                .col-md-2
+                .col-md-8 
+                    H3#contenth3=contentlist.title
+                    br
+                    P#contentp=contentlist.content
+
+block script
+    script(src="./js/scripts.js")

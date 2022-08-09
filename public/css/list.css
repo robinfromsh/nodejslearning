@@ -1,0 +1,99 @@
+div.listmain {height: 100px;}
+.actorlist {height: 80%;width: 80%;margin-left: 10%;}
+
+.listinfo {
+    border:1px solid gray;
+    box-shadow: 1px 1px 2px black;
+    margin: 10px 10px;
+    height: 60px;
+    background-color: lightgray;
+}
+
+
+.listinfo>.img {
+    float: left;
+    border:1px solid black;
+    margin: 5px 25px;
+}
+
+.listinfo .actorname{
+    font-size: 35px;
+    text-align: left;
+    margin-left: 10%;
+    margin-top: 10px;    
+}
+
+button a input{
+    width:100px;
+    height: 40px;
+    /* text-align: center; */
+    border: 1px solid red;
+    float: right;
+    margin-top: -40px;
+    margin-right: 10%;
+    border-radius: 34px;
+    background-color: red;
+    font-size: 20px;
+}
+
+button a:hover{
+    color:white;
+    text-decoration: none;
+}
+
+button a:visited{
+    color:white;
+    text-decoration: none;
+}
+
+img.actorimg{
+    height: 70px;
+    margin-top: 4px;
+}
+
+table {
+    width: 80%;
+    height: 40%;
+    text-align: center;
+    margin-left: 15%;
+}
+
+.t1 {
+    width: 100px;
+}
+
+.t2 {
+    width: 300px;
+}
+
+.t3 {
+    width: 300px;
+    word-spacing: 30px;
+}
+
+a,button {
+    color: lightskyblue
+
+}
+
+a.list {
+    text-decoration: none;
+}
+a.list:hover {
+    cursor: pointer;
+}
+
+li {
+    list-style:none;
+}
+
+button#list {
+    color:black
+}
+
+a.list {
+    border: 2px solid black;
+    display: inline-block;
+    width: 100px;
+    margin-left: 10px;
+}

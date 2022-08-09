@@ -1,0 +1,80 @@
+doctype html
+html(lang="en")
+    head
+        //- meta 声明 
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title bing project
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous")
+        block styles
+
+
+    body
+        //- 声明是导航条
+        nav(class="navbar navbar-default" id="homenav")
+            //- 导航条容器，是占满宽度的
+            .container 
+                //-表明导航条
+                .navbar-header 
+                    //- 如果是小屏幕的话，按钮
+                    button(class="navbar-toggle" data-toggle="collapse" data-target="#navbarbody")
+                        //- 用来描绘按钮上的横线
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    //- 标题 
+                    a.navbar-brand(href="/home") Harry Potter
+                //-常规导航
+                div(class="collapse navbar-collapse" id="navbarbody")
+                    ul(class="nav navbar-nav" style="display: inline-block;")
+                        li
+                            a(href="/home") Home 
+                        li
+                            a(href="/characterslist") Character list  
+                        li
+                            a(href="/news") News&Sharing
+
+                            
+                    ul(class="nav navbar-nav navbar-right")
+                        li(class="dropdown")
+                            a(href="#" id="logdrop" class="dropdown-toggle" data-toggle="dropdown")
+                                //- input(type="hidden" name="logusname" value=logusname id="logusname")
+                                div(class="glyphicon glyphicon-user" id="logus")
+                                    if(logusname)
+                                        span#logidname=logusname
+                                b.caret
+
+                            ul(id="logmenu1" class="dropdown-menu" aria-labelledby="logdrop")
+                                if(!logusname)
+                                    li
+                                        a(href="denglu" id="logstatus") log-in
+                                if(logtype == "admin" && logusname)
+                                    li
+                                        a(href="adminteam" id="manaforadmin") Management
+                                
+                                if(logusname)
+                                    li(id="homelogout")
+                                        a(href="/logout") log out
+                            </ul>
+            //- section#hidden
+            //-     input(type="hidden" name="logtype" value=logtype id="logtype")
+            //-     input(type="hidden" name="logusname" value=logusname id="logname")
+            //-     input(type="hidden" name="idaccount" value=idaccount id="idaccount")
+
+
+
+
+        block main
+
+        footer
+            .container 
+                .row
+                    .col-md-12
+                        span#foot(class="badge badge-info") Bing project @ComIT
+
+        script(src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous")
+        script(src="//cdn.staticfile.org/jquery/2.1.1/jquery.min.js")
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous")
+        //- script(src="./js/homenav.js")
+        block script

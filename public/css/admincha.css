@@ -1,0 +1,98 @@
+/* 导航栏 */
+a.navbar-brand {
+    height: 80px;
+    line-height: 50px;
+}
+
+.navbar-default .navbar-brand {
+    color: #777;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+.navbar-default .navbar-nav>li>a {
+    height: 80px;
+    line-height: 50px;
+    color:slateblue;
+}
+
+/* 论坛设置 */
+
+th#ti {
+    width: 30%;
+}
+
+th#au {
+    width: 20%;
+}
+
+th#da {
+    width: 20%;
+}
+
+th#op {
+    width: 10%;
+}
+
+ul#newsopera {
+    min-width: 90px;
+    text-align: center;
+
+}
+
+button#newdlts,button#newdlt{
+    border: 0;
+}
+
+/* 新人物发布 */
+form#newchaform {
+    border: 1px solid;
+    padding: 40px 30px;
+    height: 500px
+}
+
+.form1.Inputnewcharname {
+    margin-top: 20px;
+}
+
+.form2.Inputnewcharteam {
+    margin-top: 20px;
+}
+
+.form.newcharpic {
+    margin-top: 30px;
+}
+
+.form3.newscharbutton {
+    margin-top: 20px;
+    text-align: right;
+}
+
+input#newscharbuttoncancel {
+    margin-right: 4px;
+}
+
+img#newcharpic {
+    width: 140px;
+    height: 140px;
+    margin-right: 20px;
+}
+
+input[type=file] {
+    vertical-align: bottom;
+    display: inline-block;
+}
+
+/* 页脚 */
+
+span#foot {
+    letter-spacing: 2px;
+}
+
+footer {
+    margin-top: 10%;
+    margin-bottom: 1%;
+    text-align: center;
+
+}

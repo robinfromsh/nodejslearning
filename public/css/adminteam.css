@@ -1,0 +1,55 @@
+/* 导航栏 */
+a.navbar-brand {
+    height: 80px;
+    line-height: 50px;
+}
+
+.navbar-default .navbar-brand {
+    color: #777;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+.navbar-default .navbar-nav>li>a {
+    height: 80px;
+    line-height: 50px;
+    color:slateblue;
+}
+
+/* 警告烂 */
+
+button.btn.btn-danger {
+    margin-top: 2%;
+    width: 100px;
+}
+
+button.btn.btn-default {
+    margin-top: 2%;
+    margin-left: 2%;
+    width: 100px;
+}
+
+ul {
+    margin-top: 0;
+    margin-bottom: 10px;
+    list-style: none;
+    padding-left: 0;
+}
+
+th#adminnam {
+    width: 30%;
+}
+
+/* 页脚 */
+
+span#foot {
+    letter-spacing: 2px;
+}
+
+footer {
+    margin-top: 10%;
+    margin-bottom: 1%;
+    text-align: center;
+
+}

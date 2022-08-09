@@ -1,0 +1,59 @@
+extends ./mainlayout.pug
+
+block styles
+    link(rel="stylesheet" href="/css/news.css")
+
+block main
+    //-news 主体
+    .container-fluid
+        .row 
+            .col-md-12 
+                section#newsbiaoti 
+                    h3#newsbiaoti News
+        .row
+            .col-md-12
+                a#newsfabu(href="/newspost?id=new")
+                    button=`New`
+        .row
+            .col-md-12 
+                table(class="table table-hover")
+                    thead 
+                        tr 
+                            th#ti Title  
+                            th#da Date
+                            th#edid Author
+                            th#op Operation
+                                each news in newst
+                                    tr 
+                                        th#ti
+                                            a(href=`/newscontent?id=${news._id}`)=news.title 
+                                        th#da=news.posttime
+                                        th#edid=`${news.editidname}` 
+                                            section#hidden
+                                                input(type="hidden" name="editid" value=news.editid id="editid")
+                                                input(type="hidden" name="editidname" value=news.editidname id="editidname")
+                                        th#op
+                                            <div class="dropdown">
+                                                <button id="newsdLabel"  name="foredit" title="only for the Author" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    |Operation
+                                                    <span class="caret"></span>
+                                                </button>
+                                                <ul id="newsopera"class="dropdown-menu" aria-labelledby="newsdLabel">
+                                                    li
+                                                        a#newspost(href=`/newspost?id=${news._id}` title="Only for Author")
+                                                            button#newdlts(class="btn btn-default") Edit
+                                                    li.divider 
+                                                    li
+                                                        a#newspost(href=`/newsdelete?id=${news._id}`)
+                                                            button#newdlt(class="btn btn-default" ) Delete
+                                                </ul>
+                                                </div>
+
+
+        section#hidden
+                //- input(type="hidden" name="editid" value=news.editid id="editid")
+                input(type="hidden" name="logtype" value=logtype id="logtype")
+                input(type="hidden" name="idaccount" value=idaccount id="idaccount")
+
+block script
+    script(src="./js/news.js")

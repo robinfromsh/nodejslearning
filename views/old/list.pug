@@ -1,0 +1,35 @@
+extends ./layout.pug
+
+block styles
+    link(rel="stylesheet" href="/css/list.css") 
+
+
+block main
+    a.newpost(href="/post") New POST 
+    table(border= 1)
+        tr.title
+            td.t1  Pic
+            td.t2  Name
+            td.t3  Options
+            br
+        each actor in actors
+            tr.content 
+                td.t1
+                    img.actorimg(src='/img/'+actor.image)
+                td.t2=actor.name
+                td.t3
+                    li  
+                        a.list(href=`/post?id=${actor._id}`) Edit  
+                        a.list(href=`/detail?id=${actor._id}`) Detail
+                        a.list(href=`/delete?id=${actor._id}`) Delete 
+
+
+
+
+
+
+
+
+
+
+

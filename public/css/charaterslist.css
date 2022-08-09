@@ -1,0 +1,80 @@
+/* 导航栏 */
+a.navbar-brand {
+    height: 80px;
+    line-height: 50px;
+}
+
+.navbar-default .navbar-brand {
+    color: #777;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+.navbar-default .navbar-nav>li>a {
+    height: 80px;
+    line-height: 50px;
+    color:slateblue;
+}
+
+span#foot {
+    letter-spacing: 2px;
+}
+
+footer {
+    margin-top: 10%;
+    margin-bottom: 1%;
+    text-align: center;
+
+}
+
+/* 小标题 */
+
+div#xiaobiaoti {
+    text-align: center;
+    background: gainsboro;
+    margin-bottom: 20px;
+}
+
+.checkshuai {
+    display: inline-block;
+    margin-inline-end: 50px;
+}
+
+section#shuaixuan {
+    border-bottom: 4px groove;
+    padding-bottom: 10px;
+}
+
+section#chalist {
+    margin: 30px;
+    min-height: 500px;
+}
+
+/* 角色列表 */
+
+img#characterimg {
+    width: 140px;
+    height: 140px;
+    border: 2px solid;
+}
+
+/* 2。list的css */
+
+.row.chalistpad {
+    padding: 20px;
+    background: gainsboro;
+}
+
+
+p#charactername {
+    margin-bottom: 1px;
+    margin-top: 1px;
+}
+
+p#characterteam {
+    margin-top: 1px;
+}
+div#characerdropdown {
+    margin-bottom: 10px;
+}

@@ -1,0 +1,37 @@
+extends ./mainlayout.pug
+
+block styles
+    link(rel="stylesheet", href="./css/signlog.css")
+
+block main
+    .container-flued
+        .row 
+            .col-md-3 
+            .col-md-6  
+                form(action="/home",method="post", id="newactform")
+                    h3 Login
+                    .form1.InputAccountName
+                        label(for="InputAccountName") Account
+                        input(type="Account" name="account" class="form-control" id="InputAccountName" placeholder="Account Name")
+                                
+                    .form3.Inputpassword1
+                        label(for="InputPassword1") Password
+                        input( onkeyup="checkpwd()" type="password" name="password" class="form-control" id="Inputpassword1" placeholder="Password")
+
+                    div(class="typeselect") Account type
+                        br
+                        label(class="radio-inline") 
+                            <input type="radio" name="actyp" id="newactr1" value="admin" checked> for admin
+                        label(class="radio-inline")
+                            <input type="radio" name="actyp" id="newacr2" value="user"> for users
+                        p(class="text-capitalize" id="checkpwdinfo" style="display:none;background-color:pink") Password is not correct !!
+                            //- input(type="hidden",name="newchecktype",value="")
+                        .bottombut
+                            a(href="/signlog?id=new" id="alog") sign up ?
+                            div(class="butlog")
+                                button(type="button" class="btn btn-default" onclick = "location.href='/'") Cancel
+                                //-button 不设置submit 表单不提交
+                                button(type="submit" class="btn btn-primary" id="newaccountsubmit" ) Submit
+
+block script 
+    script(src="./js/scripts.js")

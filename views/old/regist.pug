@@ -1,0 +1,31 @@
+extends ./logreglayout.pug
+
+block styles
+    link(rel="stylesheet" href="/css/detail.css") 
+
+
+block main
+    .loginmain 
+        .form
+            form(action="/regist",method="post")
+                .label
+                    laber(for="accountname") New Account
+                br
+                .inputaccount
+                    input(type="text",name="accountname",placeholder="accountname")
+                br
+                .label
+                    laber(for="password1") New Password
+                br
+                .inputpass
+                    input(type="password" name="password",placeholder="password")
+                br
+                .label
+                    laber(for="password1") Confirm Password
+                br
+                .inputpass
+                    input(type="password" name="password2",placeholder="password")
+                br
+                .inputsubmit
+                    input(type="submit" value="Submit")
+                br

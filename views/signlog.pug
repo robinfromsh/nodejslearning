@@ -1,0 +1,47 @@
+extends ./mainlayout.pug
+
+block styles
+    link(rel="stylesheet", href="./css/signlog.css")
+
+block main
+    .container-flued
+        .row 
+            .col-md-3 
+            .col-md-6  
+                form(action="/signup",method="post", id="newactform")
+                    h3 New Account Sign-up
+                    #hiddensignid
+                        input(type="hidden" name="signidtype" value=signac._id)
+                    .form1.InputAccountName
+                        label(for="InputAccountName") New Account
+                        input(type="name" name="account" class="form-control" id="InputAccountName" value=signac.account)
+                                                
+                    .form2.Inputemail
+                        label(for="Inputemail") E-mail
+                        input(type="name" name="email" class="form-control" id="Inputemail" value=signac.email)
+                                
+                    .form3.Inputpassword1
+                        label(for="InputPassword1") New Password
+                        input(onkeyup="checkpwd()" type="password" name="password" class="form-control" id="Inputpassword1" placeholder="Password")
+
+                    .form4.Inputpassword2
+                        label(for="InputPassword2") Confirm Password
+                        input(onkeyup="checkpwd()" type="password" class="form-control" id="Inputpassword2" placeholder="Password")
+                    if(logtype == "admin")
+                        div(class="typeselect") Account type
+                            br
+                            label(class="radio-inline") 
+                                <input type="radio" name="newactr" id="newacr2" value="user"> for user
+                            label(class="radio-inline")
+                                <input type="radio" name="newactr" id="newactr1" value="admin"> for admin
+                    else 
+                        input(type="hidden" name="newactr" value="user")
+                    p(class="text-capitalize" id="checkpwdinfo" style="display:none;background-color:pink") confirm password not match !!
+                            //- input(type="hidden",name="newchecktype",value="")
+                    div(class="butsign")
+                        button(type="button" class="btn btn-default" onclick = "location.href='/home'") Cancle
+                            //-button 不设置submit 表单不提交
+                        button(type="submit" class="btn btn-primary" id="newaccountsubmit"  disabled) Submit
+
+block script 
+    script(src="./js/scripts.js")

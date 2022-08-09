@@ -1,0 +1,89 @@
+
+.container-flued {
+    margin-top: 60px;
+}
+
+#newactform {
+    padding: 20px 30px;
+    margin-top: 40px;
+    border: 1px solid black;
+    box-shadow: 7px 7px 6px 1px grey;
+}
+
+.form1.InputAccountName {
+    margin-top: 30px;
+}
+
+.form2.Inputemail {
+    margin-top: 20px;
+}
+
+.form3.Inputpassword1 {
+    margin-top: 20px;
+}
+
+.form4.Inputpassword2{
+    margin-top: 20px;
+}
+
+.typeselect{
+    margin-top: 20px;
+}
+
+
+.butsign {
+    text-align: right;
+    margin-top: 10px;
+}
+
+button#newaccountsubmit {
+    margin-left: 2px;
+}
+
+
+/* 登录页面 */
+
+.bottombut {
+    text-align: right;
+}
+
+.butlog {
+    text-align: right;
+    display: inline;
+}
+
+#alog {
+    margin-right: 20px;
+}
+
+/* 页脚 */
+
+span#foot {
+    letter-spacing: 2px;
+}
+
+footer {
+    margin-top: 10%;
+    margin-bottom: 1%;
+    text-align: center;
+
+}
+
+/* 导航栏 */
+a.navbar-brand {
+    height: 80px;
+    line-height: 50px;
+}
+
+.navbar-default .navbar-brand {
+    color: #777;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+.navbar-default .navbar-nav>li>a {
+    height: 80px;
+    line-height: 50px;
+    color:slateblue;
+}

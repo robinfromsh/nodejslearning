@@ -1,0 +1,68 @@
+extends ./mainlayout.pug
+
+block styles
+    link(rel="stylesheet" href="/css/charaterslist.css")
+
+block main
+    .container-fluid.chalists
+        //-小标题
+        .row#xiaobiaoti
+            .col-md-12 
+                H1 character list 
+        .row#shaixuan 
+            .col-md-12
+                span#teamnam Filter by team:
+                section#shuaixuan
+                        //- form#shuaixuanbiao(action="#" method="get")  
+                        .checkbox.checkshuai
+                            <label>
+                                <input type="checkbox" name="fuxuan" value="Gryffindor" id="filterGryffindor"> Gryffindor
+                            </label>
+                        .checkbox.checkshuai
+                            <label>
+                                <input type="checkbox" name="fuxuan"value="Slytherin" id="filterSlythrin">
+                                    Option Slytherin  
+                            </label>                         
+                        .checkbox.checkshuai
+                            <label>
+                                <input type="checkbox" name="fuxuan" value="Hufflepuff"id="filterHufflepuf">
+                                    Option Hufflepuff
+                            </label>                
+                        .checkbox.checkshuai 
+                            <label>
+                                <input type="checkbox" name="fuxuan"value="Ravenclaw"id="filterRavenclaw">
+                                    Option Ravenclaw
+                            </label>
+                        button#charateamfilter.btn.btn-default.btn-primary(onclick="shai()") submit
+                        a(href="/characterslist") 
+                            button.btn.btn-default Reset
+                        if (logtype == "admin"&& logusname)
+                            a(href="/characterpost?id=new") 
+                                button.btn.btn-default.right(name="onlyforadmin") New Character
+
+
+        section#chalist
+            .row.chalistpad
+                each charater in characters
+                    div(name="displaychar",id=charater.team)
+                        .col-md-3.characterlist
+                            img#characterimg(src="/img/"+charater.image class="img-thumbnail")
+                            p#charactername=`Name: ${charater.name}`
+                            p#characterteam=`Team: ${charater.team}`
+                            if (logtype == "admin" && logusname)
+                                div(class="dropdown" id="characerdropdown" name="onlyforadmin")
+                                    button(id="chareditLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")
+                                        |Operation
+                                        <span class="caret"></span>
+                                    ul(id="chareditopera" class="dropdown-menu" aria-labelledby="chareditLabel")
+                                        li
+                                            a#characterteam(href=`/characterpost?id=${charater._id}`) Edit
+                                        li.divider 
+                                        li
+                                            a#characterteam(href=`/characterdelete?id=${charater._id}`) Delete
+
+        
+
+block script
+    //- script(src="./js/scripts.js")
+    script(src="./js/characterlist.js")

@@ -1,0 +1,148 @@
+doctype html
+html(lang="en")
+    head
+        //- meta 声明 
+        meta(charset="utf-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
+        title bing project
+        link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous")
+        link(rel="stylesheet" href="/css/adminteam.css")
+
+
+    body        
+        nav(class="navbar navbar-default" id="homenav")
+            //- 导航条容器，是占满宽度的
+            .container 
+                //-表明导航条
+                .navbar-header 
+                    //- 如果是小屏幕的话，按钮
+                    button(class="navbar-toggle" data-toggle="collapse" data-target="#navbarbody")
+                        //- 用来描绘按钮上的横线
+                        span.icon-bar
+                        span.icon-bar
+                        span.icon-bar
+                    //- 标题
+                    ul(class="nav navbar-nav")
+                        li(class="dropdown")
+                            a(class="navbar-brand dropdown-toggle" data-toggle="dropdown" href="#")  Administrator 
+                                    b.caret
+                            ul(class="dropdown-menu")
+                                li
+                                    a(href="/") Home page
+                    //-常规导航
+                div(class="collapse navbar-collapse" id="navbarbody")
+                    ul(class="nav navbar-nav" style="display: inline-block;")                    
+                    ul(class="nav navbar-nav navbar-right")
+                        li(class="dropdown")
+                            a(href="#" id="logdrop" class="dropdown-toggle" data-toggle="dropdown")
+                                div(class="glyphicon glyphicon-user" id="logus")
+                                    if(logusname)
+                                        span#logidname=logusname
+                                b.caret
+                            <ul id="logmenu1" class="dropdown-menu" aria-labelledby="logdrop">
+                                if(!logusname)
+                                    <li><a href="denglu" id="logstatus" >log-in</a></li>     
+                                if(logusname)
+                                    <li id="homelogout"><a href="/logout">log out</a></li>
+                            </ul>
+        //-警告提示语
+        .container-fluid
+            .row
+                .col-md-12
+                    div(class="alert alert-danger alert-dismissible fade in" role="alert")
+                        button(type="button" class="close" data-dismiss="alert" aria-label="Close")
+                            span(aria-hidden="true") X
+                        h4 Caution
+                        p Proceed with caution
+                        button(type="button" class="btn btn-danger") Continue
+                        button(type="button" class="btn btn-default" data-dismiss="alert" ) Close
+        //-新建用户
+        .container-fluid
+            .row
+                .col-md-12
+                    a(href=`/signlog?id=new`)
+                        button(class="btn btn-primary" data-toggle="modal" data-target="#newaccount") New account
+
+        //- 用户管理界面                
+        .container-fluid
+            .row
+                .col-md-12
+                    div(class="bs-example bs-example-tabs" data-example-id="togglable-tabs")
+                        ul(id="myTabs" class="nav nav-tabs" role="tablist")
+                            li(role="presentation" class="active")
+                                a(href="#admin" id="admin-tab" role="tab" data-toggle="tab" aria-controls="admin" aria-expanded="false") Admin
+                            li(role="presentation" class="")
+                                a(href="#user" role="tab" id="user-tab" data-toggle="tab" aria-controls="user" aria-expanded="false") User
+
+                        //-管理员界面
+                        div(id="myTabContent" class="tab-content")
+                            div(role="tabpanel" class="tab-pane fade active in" id="admin" aria-labelledby="admin-tab")
+                                table(class="table table-striped") 
+                                    thead 
+                                        tr 
+                                            th Account name 
+                                            th E-mail
+                                            th Password
+                                            th Options
+                                    each team in teams
+                                        if (team.type == "admin")
+                                            tr 
+                                                th#adminnam=team.account 
+                                                th=team.email
+                                                th=team.password
+                                                th 
+                                                    ul 
+                                                        <li class="dropdown">
+                                                            <a id="drop4" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Option 
+                                                                <span class="caret"></span>
+                                                        <ul id="menu1" class="dropdown-menu" aria-labelledby="drop4">
+                                                            li
+                                                                a(href=`/signlog?id=${team._id}`) Edit
+                                                            li.divider
+                                                            li
+                                                                a(href=`/userdelete?id=${team._id}&typeid=${team.type}`) Delete
+                                                        </ul>
+                                                    </li>
+                            //-用户管理界面
+                            <div role="tabpanel" class="tab-pane fade" id="user" aria-labelledby="user-tab">
+                                table(class="table table-striped") 
+                                    thead 
+                                        tr 
+                                            th Account name 
+                                            th E-mail
+                                            th Password
+                                            th Options
+                                    each team in teams
+                                        if (team.type == "user")
+                                            tr 
+                                                th#adminnam=team.account 
+                                                th=team.email
+                                                th=team.password
+                                                th 
+                                                    ul 
+                                                        <li class="dropdown">
+                                                            <a id="drop4" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> Option 
+                                                                <span class="caret"></span>
+                                                        <ul id="menu1" class="dropdown-menu" aria-labelledby="drop4">
+                                                            li
+                                                                a(href=`/signlog?id=${team._id}`) Edit
+                                                            li.divider
+                                                            li
+                                                                a(href=`/userdelete?id=${team._id}&typeid=${team.type}`) Delete
+                                                        </ul>
+                                                    </li>
+
+    footer  
+        .container 
+            .row
+                .col-md-12
+                    span#foot(class="badge badge-info") Bing project @ComIT
+
+                        
+
+
+        script(src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous")
+        script(src="//cdn.staticfile.org/jquery/2.1.1/jquery.min.js")
+        script(src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous")
+        script(src="./js/scripts.js")

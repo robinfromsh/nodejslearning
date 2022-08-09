@@ -1,0 +1,27 @@
+extends ./logreglayout.pug
+
+block styles
+    link(rel="stylesheet" href="/css/detail.css") 
+
+
+block main
+    .loginmain 
+        .form
+            form(action="/login",method="post")
+                .label
+                    laber(for="accountname") Account Name
+                br
+                .inputaccount
+                    input(type="text",name="account",placeholder="accountname")
+                br
+                .label
+                    laber(for="password") Password
+                br
+                .inputpass
+                    input(type="text" name="password",placeholder="password")
+                br
+                .inputsubmit
+                    input(type="submit" value="Login")
+                br
+            .linkregist 
+                a(href="/regist") Sign up

@@ -1,0 +1,32 @@
+extends ./layout.pug
+
+block styles
+    link(rel="stylesheet" href="/css/detail.css") 
+
+block script
+    scripts(src='/js/scripts.js')
+
+
+block main
+    .detailmain 
+        .postdetail
+            form.post(action="/post",method="post",enctype="multipart/form-data")
+                .actorname
+                    input(type="text",name="name",placeholder="the name",value= documont.name )
+                br
+                .file
+                    input#report(type="file", name="file")
+                    if checkid
+                        img.actorimg(src='/img/'+documont.image)
+                br
+                .textinfo 
+                    textarea(name="detail")=documont.detail
+                br
+                .postbutton 
+                    if checkid
+                        input(type="submit", value="Edit")
+                    else 
+                        input(type="submit", value="Post")
+                input(type="hidden",name="checkid",value=checkid)
+                input(type="hidden",name="id",value=id)
+        

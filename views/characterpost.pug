@@ -1,0 +1,35 @@
+extends ./mainlayout.pug
+
+block styles
+    link(rel="stylesheet" href="/css/admincha.css")
+
+block main
+    .container-flued
+        .row
+            .col-md-2 
+            .col-md-8
+                //- section#newspostform   
+                form#newchaform(action="#",method="post",enctype="multipart/form-data")
+                    #hidden
+                        input(type="hidden" name="idtype" value=characterpost._id)
+                    h3#newactform New Post
+                    .form1.Inputnewcharname
+                        label(for="charname") Character Name
+                        input(type="text" name="charname" class="form-control" id="Inputcharname" value=characterpost.name)
+                                                
+                    .form2.Inputnewcharteam 
+                        label(for="Inputnewcharteam") Team
+                        input(type="text" name="charteam" class="form-control" id="Inputcharteam" value=characterpost.team)
+                    
+                    .form.newcharpic
+                        if(characterpost.image!="")
+                            img#newcharpic(src="/img/"+ characterpost.image) 
+                        input#newcharpic(type="file", name="file")
+                        input#picchange(type="hidden" name="oldpic" value=characterpost.image)
+                    
+                    .form3.newscharbutton
+                        input(type="button" class="btn" id="newscharbuttoncancel" value="cancel" onclick="javascript:window.location.href='/characterslist'")
+                        button(type="submit" class="btn btn-primary right" id="newscharbuttonsumbit") Submit
+
+block script
+    script(src="./js/scripts.js")

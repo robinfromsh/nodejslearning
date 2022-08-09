@@ -1,0 +1,40 @@
+extends ./mainlayout.pug
+
+block styles
+    link(rel="stylesheet" href="/css/news.css")
+
+block main
+        .container-flued
+            .row 
+                .col-md-2 
+                .col-md-8
+                    //- section#newspostform   
+                    form(action="/newspost",method="post", id="newactform")
+                            #hidden
+                                //- check new or edit
+                                input(type="hidden" name="idtype" value=newspostcon._id) 
+                                //- add post time
+                                input(type="hidden" name="posttime" value=newspostcon.posttime)
+                                //- submit editer
+                                //- input(type="hidden" name="editid" value=idaccount)
+                            h3#newactform New Post
+                            if (newspostcon.editidname)
+                                .form1.editidform 
+                                    label(for="editidform")=`The Author is ${newspostcon.editidname}`
+                                        input(type="hidden" name="editid" value=idaccount)
+                                        input(type="hidden" name="editidname" value=newspostcon.editidname)
+                            .form1.Inputnewstitle
+                                label(for="Inputnewstitle") Title 
+                                input(type="text" name="newsposttitle" class="form-control" id="Inputnewstitle" value=newspostcon.title)
+                                                        
+                            .form2.newscontent
+                                label(for="Inputnewscontent") Content
+                                textarea(name="newspostcontent", cols="20", rows="10" class="form-control" id="newscontent" style="resize: none")=newspostcon.content
+
+                            .form3.newspostbutton
+                                    button(type="button" class="btn btn-default" onclick = "location.href='/news'") Cancle
+                                    button(type="submit" class="btn btn-primary right" id="newspostbutton" ) Submit
+
+
+block script
+    script(src="./js/scripts.js")
